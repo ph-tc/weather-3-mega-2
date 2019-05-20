@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+	<title>Погода</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="body-inner">
+	<div class="global-wrapper">
+		<div class="inner">
+			<div class="offer">
+				<div class="inner">
+					<span>Нажатием на кнопку "Узнать" Вы подтверждаете свое согласие с подключением подписки SUBNAME и <a
+						href="http://podpiski.megafon.ru/col/mds4/web/jsp/files/oferta.pdf">Условиями предоставления подписки</a>. Стоимость подписки SUBPRICE.ACCOUNT. Услуга предоставляется Контент-провайдером PROVIDER.</span>
+				</div>
+			</div>
+			<div class="header">
+				<div class="inner blured">
+					<div class="name">
+						<span>Погода</span>
+					</div>
+					<div class="search">
+						<button disabled></button>
+					</div>
+					<div class="plus18">
+						<div></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="main">
+				<div class="inner blured">
+					<div class="temperature">
+						<div class="inner">
+							<button disabled>
+								<div class="icon"></div>
+								<p>Узнать погоду<br>в вашем городе</p>
+							</button>
+						</div>
+					</div>
+					<div class="placeholder"></div>
+					<div class="details">
+						<table class="inner">
+							<tr>
+								<td><p>3.3 м/с, С</p></td>
+								<td>14.00</td>
+								<td>15.00</td>
+								<td>16.00</td>
+								<td>17.00</td>
+							</tr>
+							<tr>
+								<td><p>748 мм.рт.ст.</p></td>
+								<td><div class="icon"></div></td>
+								<td><div class="icon"></div></td>
+								<td><div class="icon"></div></td>
+								<td><div class="icon"></div></td>
+							</tr>
+							<tr>
+								<td><p>59%</p></td>
+								<td><p></p></td>
+								<td><p></p></td>
+								<td><p></p></td>
+								<td><p></p></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="btn-wrapper" id="btn-wrapper">
+					<a class="btn" id="wapSubmitBtn" href="<TARIF_YES_URL>">
+						<span>Узнать</span>
+					</a>
+					<div class="cancel">
+						<a href="<TARIF_NO_URL>">
+							<span>Отмена</span>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="rules" id="footer">
+				<div class="inner blured">
+					<p>Информация для абонентов - тел. 8 800 500-25-43 (бесплатно в домашнем регионе) | <a href="ВАША ССЫЛКА НА ПРАВИЛА ПОДПИСКИ">Правила подписки поставщика услуг</a> | <a href="#<LK_LINK_URL>">Личный кабинет</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+<script type="text/javascript">
+		//<![CDATA[
+		function rsz() {
+				var footer = document['getElementById']('footer');
+				var buttonWrap = document['getElementsByClassName']('btn-wrapper')[0];
+				footer['style']['bottom'] = "auto";
+				footer['style']['top'] = (window['innerHeight'] - footer.offsetHeight) + 'px';
+				if ((window['innerHeight'] > 212) && (window['innerHeight'] < 233)) {
+						buttonWrap['style']['marginTop'] = '-'+ (footer.offsetHeight-55) + 'px';
+				} else { buttonWrap['style']['marginTop'] = 0; }
+
+				document.body.style.height = window.innerHeight + 'px';
+		}
+		setInterval(function() {
+				rsz()
+		}, 100);
+		window['onresize'] = function() {
+				window['scrollTo'](0, 0);
+				setTimeout(function() {
+						rsz()
+				}, 100)
+		};
+		document.addEventListener('touchmove', function(e) {
+				e.preventDefault();
+		}, { passive: false });
+		//]]>
+</script>
+
+</body>
+</html>

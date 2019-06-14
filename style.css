@@ -117,13 +117,14 @@ html {
 }
 
 body {
-	position: relative;
+	position: fixed;
 	height: 100%;
 	width: 100%;
 	margin: 0;
 	-ms-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
+	overflow: hidden;
 }
 
 .body-inner {
@@ -163,10 +164,8 @@ img {
 	height: 100%;
 	-webkit-border-radius: 20px;
 	border-radius: 20px;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#679fd0), to(#3b6ba9));
-	background-image: -webkit-linear-gradient(top, #679fd0, #3b6ba9);
-	background-image: -o-linear-gradient(top, #679fd0, #3b6ba9);
-	background-image: linear-gradient(to bottom, #679fd0, #3b6ba9);
+	background-color: #5185bd;
+	overflow: hidden;
 }
 
 /*OFFER*/
@@ -176,12 +175,13 @@ img {
 	width: 100%;
 	font-size: 0;
 	text-align: center;
+	background-color: #5185bd;
 }
 
 .offer .inner {
 	position: relative;
 	width: 100%;
-	padding: 0 10px;
+	padding: 2px 10px;
 }
 
 .offer span, .offer a {
@@ -515,6 +515,8 @@ img {
 	-webkit-background-size: contain;
 	background-size: contain;
 	background-repeat: no-repeat;
+	-webkit-filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.4));
+	filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.4));
 }
 
 .main .btn + div {
@@ -550,6 +552,12 @@ img {
 	color: #ddd;
 }
 
+@media screen and (max-height: 440px) {
+	.main .btn-wrapper {
+		top: 57%;
+	}
+}
+
 @media screen and (max-height: 410px) {
 	.main .btn-wrapper .heading {
 		display: none;
@@ -560,11 +568,12 @@ img {
 
 .rules {
 	display: table-row;
+	background-color: #5185bd;
 }
 
 .rules .inner {
 	position: relative;
-	padding: 2px;
+	padding: 2px 10px;
 }
 
 .rules p, .rules a {
@@ -573,7 +582,7 @@ img {
 	font-size: 9px;
 	line-height: 1;
 	text-align: center;
-	color: #ccc;
+	color: #eee;
 	opacity: 0.8;
 }
 
